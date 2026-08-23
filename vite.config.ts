@@ -9,6 +9,9 @@ import type {} from 'vite-ssg'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // Served from https://sksamurai17.github.io/vstagetcg/, not the domain root.
+  // Set in dev too, so local and production resolve URLs identically.
+  base: '/vstagetcg/',
   plugins: [vue(), vueDevTools()],
   resolve: {
     alias: {
@@ -20,5 +23,11 @@ export default defineConfig({
   ssgOptions: {
     formatting: 'minify',
     dirStyle: 'nested',
+    beastiesOptions: {
+      // Asset URLs are written as /vstagetcg/assets/... but the files sit in
+      // dist/assets/. Without this, beasties silently fails to resolve them
+      // and inlines no critical CSS at all.
+      publicPath: '/vstagetcg/',
+    },
   },
 })

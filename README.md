@@ -115,6 +115,22 @@ Two constraints follow from this, and both fail quietly if broken:
 Tokens have no page of their own by design; they appear on the detail view of whichever
 card summons them.
 
+## Deployment
+
+Published to <https://sksamurai17.github.io/vstagetcg/> as a GitHub project site.
+`.github/workflows/deploy.yml` builds and deploys on every push to `main`; nothing
+built is ever committed.
+
+The `/vstagetcg/` subpath comes from the repo name and must be mirrored in three
+places, or the deployed site loads blank:
+
+- `base` in `vite.config.ts`
+- the router base in `src/main.ts` (`import.meta.env.BASE_URL`)
+- `beastiesOptions.publicPath` in `vite.config.ts` — without it beasties cannot
+  resolve the hashed CSS on disk and silently inlines no critical CSS at all
+
+Renaming the repo means changing all three.
+
 ## Notes for this machine
 
 - Port **5180**, not Vite's default 5173, which is unbindable here.
