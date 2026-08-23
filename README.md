@@ -110,7 +110,7 @@ Two constraints follow from this, and both fail quietly if broken:
 | `/cards` | Full gallery with search and rarity filter |
 | `/cards/:id` | Card detail — overlay from the gallery, standalone page when linked |
 | `/sets` | Set overview with signature cards and counts |
-| `/rules` | Placeholder, to be written |
+| `/rules` | How to play, transcribed from the rules doc |
 
 Tokens have no page of their own by design; they appear on the detail view of whichever
 card summons them.
