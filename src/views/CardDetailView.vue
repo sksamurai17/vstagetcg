@@ -3,6 +3,7 @@ import { computed, onBeforeUnmount, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useHead } from '@unhead/vue'
 import { getCard } from '@/data'
+import { RARITY_LABELS } from '@/types/card'
 import CardDetail from '@/components/CardDetail.vue'
 
 const props = defineProps<{ id: string }>()
@@ -20,15 +21,17 @@ useHead(
     const c = card.value
     if (!c) return { title: 'Card not found — VStage' }
     const skills = c.skills.map((s) => s.name).join(', ')
+    // Display label, not the raw value: 'Ultra Rare', never 'ultra-rare'.
+    const rarity = RARITY_LABELS[c.rarity]
     return {
       title: `${c.name} (${c.id}) — VStage`,
       meta: [
         {
           name: 'description',
-          content: `${c.name} — ${c.rarity}, ${c.maxHp} HP. Skills: ${skills}.`,
+          content: `${c.name} — ${rarity}, ${c.maxHp} HP. Skills: ${skills}.`,
         },
         { property: 'og:title', content: `${c.name} — VStage` },
-        { property: 'og:description', content: `${c.rarity} · ${c.maxHp} HP · ${skills}` },
+        { property: 'og:description', content: `${rarity} · ${c.maxHp} HP · ${skills}` },
       ],
     }
   }),
