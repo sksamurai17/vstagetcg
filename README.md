@@ -37,12 +37,12 @@ one static route per card, and `vite-ssg` prerenders whatever it finds.
 
 ```ts
 // A full card definition.
-{ setId: 'vs01', number: 1, image: sampleArt, artist: 'SketchSamurai',
+{ setId: 'VS00', number: 1, image: sampleArt, artist: 'SketchSamurai',
   name: 'Vtuber A', rarity: 'uncommon', maxHp: 10, skills: [...] }
 
 // An overnumbered secret print (41/40) of an existing card.
-{ setId: 'vs01', number: 41, image: sampleArt, artist: 'SketchSamurai',
-  rarity: 'ultra-rare', baseCardId: 'vs01-002' }
+{ setId: 'VS00', number: 41, image: sampleArt, artist: 'SketchSamurai',
+  rarity: 'ultra-rare', baseCardId: 'VS00-002' }
 ```
 
 A reprint has no `name`, `maxHp` or `skills` field *at all* — those resolve from its base
@@ -86,7 +86,7 @@ one, and point that card's `image` at it. Cards can be migrated one at a time.
 ## How prerendering works
 
 `npm run build` runs `vite-ssg build`, which renders each route to a real HTML file
-(`dist/cards/vs01-001/index.html`) containing the card's actual text. That is what makes
+(`dist/cards/VS00-001/index.html`) containing the card's actual text. That is what makes
 shared card links produce previews in Discord and get indexed by search engines.
 
 Card detail is a **child route of `/cards`**, which means one component serves both

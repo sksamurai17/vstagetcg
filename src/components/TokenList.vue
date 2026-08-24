@@ -8,17 +8,33 @@ defineProps<{ tokens: Token[] }>()
   <ul class="list-unstyled d-grid gap-2 mb-0">
     <li v-for="token in tokens" :key="token.id" class="border rounded p-2">
       <div class="d-flex align-items-center gap-2 flex-wrap">
+        <span class="badge text-bg-secondary text-uppercase">{{ token.kind }}</span>
         <strong>{{ token.name }}</strong>
-        <span class="badge text-bg-dark text-uppercase">{{ token.kind }}</span>
-        <span v-if="token.kind === 'creature'" class="badge text-bg-danger">
-          {{ token.maxHp }} HP
-        </span>
-        <span v-else class="badge text-bg-info">{{ token.duration }} turns</span>
+        
       </div>
-      <p class="mb-0 mt-1 small">
-        <span class="fw-semibold">{{ token.effect.name }}</span>
-        <span class="text-body-secondary"> — {{ token.effect.description }}</span>
-      </p>
+      <div v-if="token.kind === 'summon'" class="d-flex align-items-center gap-2 flex-wrap">
+          <span class="text-danger">{{ token.dmgOutput }} ATK</span> / 
+          <span class="text-success">{{ token.maxHp }} HP</span>
+      </div>
+      <span v-else class="text-info">{{ token.duration }}-turn Duration</span>
+      <span v-if="token.kind === 'summon'">
+        <p class="mb-0 mt-1 small">
+          <span class="text-body-secondary">Deals {{ token.dmgOutput }} DMG to an enemy at the end of your turn.</span>
+        </p>
+      </span>
+      <span v-else>
+        <p class="mb-0 mt-1 small">
+          <span v-if="token.effectOutput.startsWith('+')">
+            <span class="text-body-secondary">Restores {{ token.effectOutput.slice(1) }} HP to an ally character at the end of your turn.</span>
+          </span>
+          <span v-else-if="token.effectOutput.startsWith('-')">
+            <span class="text-body-secondary">Reduces incoming DMG by {{ token.effectOutput.slice(1) }} for an ally during your opponent's next turn.</span>
+          </span>
+          <span v-else>
+            <span class="text-body-secondary">Deals {{ token.effectOutput }} DMG to an enemy at the end of your turn.</span>
+          </span>
+        </p>
+      </span>
     </li>
   </ul>
 </template>

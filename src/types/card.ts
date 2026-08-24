@@ -27,24 +27,24 @@ export const RARITY_LABELS: Record<RarityType, string> = {
   'ultra-rare': 'Ultra Rare',
 }
 
-/** Active skills cost resources; passive skills cannot. */
+/** Active skills cost resources; passive and reactive skills cannot. */
 export type Skill =
   | { type: 'passive'; name: string; description: string }
+  | { type: 'reaction'; name: string; description: string }
   | { type: 'active'; name: string; description: string; cost: number }
 
 type TokenBase = {
   id: string
   name: string
-  effect: { name: string; description: string }
 }
 
-/** Creature tokens sit on the field and can be attacked. */
-export type CreatureToken = TokenBase & { kind: 'creature'; maxHp: number }
+/** Summon tokens sit on the stage and can be attacked. */
+export type SummonToken = TokenBase & { kind: 'summon'; maxHp: number; dmgOutput: number }
 
-/** Field tokens apply a passive effect for a fixed number of turns. */
-export type FieldToken = TokenBase & { kind: 'field'; duration: number }
+/** Stage Effect tokens apply a passive (or reactive) effect for a fixed number of turns. */
+export type StageEffectToken = TokenBase & { kind: 'stage-effect'; duration: number; effectOutput: string }
 
-export type Token = CreatureToken | FieldToken
+export type Token = SummonToken | StageEffectToken
 
 export type BaseCard = {
   setId: string
@@ -56,7 +56,7 @@ export type BaseCard = {
   image: string
   /** Illustrator credit, as printed on the card. */
   artist: string
-  /** Tokens this card can put onto the field. */
+  /** Tokens this card can put onto the stage. */
   tokenIds?: string[]
 }
 
@@ -102,7 +102,7 @@ export function isReprint(card: Card): card is Reprint {
   return 'baseCardId' in card
 }
 
-/** Stable URL id, zero-padded so routes sort predictably: vs01-041. */
+/** Stable URL id, zero-padded so routes sort predictably: VS00-041. */
 export function cardId(setId: string, number: number): string {
   return `${setId}-${String(number).padStart(3, '0')}`
 }

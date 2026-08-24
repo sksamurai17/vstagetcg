@@ -27,27 +27,30 @@ const tokens = computed(() => getTokensFor(props.card))
 
     <div class="col-12 col-sm-7">
       <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
-        <RarityPill :rarity="card.rarity" />
-        <span class="text-body-secondary small font-monospace">{{ card.setId }} · {{ number }}</span>
+        <span class="text-body-secondary small font-monospace">{{ card.setId }} {{ set?.name ?? card.setId }} · {{ number }}</span>
         <span v-if="card.isReprint" class="badge text-bg-warning">Secret print</span>
       </div>
 
-      <h1 class="h3 mb-1">{{ card.name }}</h1>
-      <p class="text-body-secondary small mb-3">
-        {{ set?.name ?? card.setId }} · <span class="text-danger fw-semibold">{{ card.maxHp }} HP</span>
-      </p>
+      <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
+        <h1 class="h3 mb-1">{{ card.name }}</h1>
+        <RarityPill :rarity="card.rarity" />
+      </div>
 
       <p v-if="card.isReprint" class="alert alert-secondary py-2 small">
         An overnumbered print of
-        <RouterLink :to="`/cards/${card.baseCardId}`">{{ card.baseCardId }}</RouterLink>. Same
-        skills and HP as the base card — only the rarity and art differ.
+        <RouterLink :to="`/cards/${card.baseCardId}`">{{ card.baseCardId }}</RouterLink> with the same
+        skills and HP as the base card, but with higher rarity and full artwork.
       </p>
 
-      <h2 class="h6 text-uppercase text-body-secondary">Skills</h2>
+      <h5 class="text-body-secondary">
+        <span class="text-success fw-semibold">{{ card.maxHp }} HP</span>
+      </h5>
+
+      <h2 class="h5 text-body-secondary">Skills</h2>
       <SkillList :skills="card.skills" class="mb-4" />
 
       <template v-if="tokens.length">
-        <h2 class="h6 text-uppercase text-body-secondary">Tokens produced</h2>
+        <h2 class="h5 text-body-secondary">Tokens Produced</h2>
         <TokenList :tokens="tokens" />
       </template>
     </div>

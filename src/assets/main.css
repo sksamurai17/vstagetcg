@@ -9,8 +9,9 @@
   --vs-rarity-ultra-rare: #e0a23c;
 
   /* Skill accents are their own thing, not borrowed from a rarity colour. */
-  --vs-skill-active: #e0a23c;
-  --vs-skill-passive: #4a9de0;
+  --vs-skill-active: #808080;
+  --vs-skill-passive: #e6a720;
+  --vs-skill-reaction: #00ff00;
   --vs-card-radius: 0.75rem;
   /* Card scans are the whole card, border included. Match their ratio exactly. */
   --vs-card-aspect: 753 / 1024;
@@ -148,6 +149,10 @@ body {
 
 .vs-skill--passive {
   border-left-color: var(--vs-skill-passive);
+}
+
+.vs-skill--reaction {
+  border-left-color: var(--vs-skill-reaction);
 }
 
 .vs-cost {

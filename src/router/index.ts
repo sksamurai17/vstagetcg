@@ -8,7 +8,7 @@ const NoOverlay = { render: () => null }
  * Card detail is a CHILD of /cards, which is what makes "enlarge in place"
  * and real prerendered URLs the same thing: the gallery stays mounted and
  * renders the overlay in its <router-view>, while a direct visit to
- * /cards/vs01-001 still produces a full HTML page containing the card text.
+ * /cards/VS00-001 still produces a full HTML page containing the card text.
  *
  * These are generated as static paths (not /cards/:id) so vite-ssg picks up
  * every card automatically without an includedRoutes hook in vite.config.

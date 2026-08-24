@@ -3,42 +3,30 @@ import type { Token } from '@/types/card'
 export const tokens: Token[] = [
   {
     id: 'tok-superchat',
-    kind: 'creature',
+    kind: 'summon',
     name: 'Superchat',
     maxHp: 2,
-    effect: {
-      name: 'Tip Jar',
-      description: 'While Superchat is on the field, its owner draws one extra card each upkeep.',
-    },
+    dmgOutput: 0,
   },
   {
     id: 'tok-clipper',
-    kind: 'creature',
+    kind: 'summon',
     name: 'Clipper',
     maxHp: 1,
-    effect: {
-      name: 'Out of Context',
-      description: 'When Clipper is destroyed, copy the last skill used by any character.',
-    },
+    dmgOutput: 0,
   },
   {
-    id: 'tok-stage-lights',
-    kind: 'field',
-    name: 'Stage Lights',
+    id: 'tok-toeby',
+    kind: 'summon',
+    name: 'Toeby',
+    maxHp: 2,
+    dmgOutput: 1,
+  },
+  {
+    id: 'tok-kidokafe',
+    kind: 'stage-effect',
+    name: 'KidoKafé',
     duration: 3,
-    effect: {
-      name: 'Spotlight',
-      description: 'All characters you control gain +1 max HP while Stage Lights is active.',
-    },
-  },
-  {
-    id: 'tok-raid',
-    kind: 'field',
-    name: 'Incoming Raid',
-    duration: 2,
-    effect: {
-      name: 'Surge',
-      description: 'Active skills cost 1 less while Incoming Raid is active.',
-    },
+    effectOutput: '+1',
   },
 ]

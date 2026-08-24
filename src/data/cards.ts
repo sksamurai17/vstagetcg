@@ -10,7 +10,7 @@ import sampleArt from '@/assets/cards/sample-art.jpg'
  */
 export const cards: Card[] = [
   {
-    setId: 'vs01',
+    setId: 'VS00',
     number: 1,
     image: sampleArt,
     artist: 'SketchSamurai',
@@ -33,30 +33,31 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'vs01',
+    setId: 'VS00',
     number: 2,
     image: sampleArt,
     artist: 'SketchSamurai',
-    name: 'Vtuber B',
-    rarity: 'rare',
-    maxHp: 12,
-    tokenIds: ['tok-stage-lights', 'tok-clipper'],
+    name: 'Genie F. Art',
+    rarity: 'common',
+    maxHp: 10,
+    tokenIds: ['tok-toeby'],
     skills: [
       {
         type: 'active',
-        name: 'Debut Showcase',
-        cost: 3,
-        description: 'Place Stage Lights on the field, then summon one Clipper token.',
+        name: 'Glizzy Run',
+        cost: 1,
+        description: 'Restore 1d3+1 HP to an ally character.',
       },
       {
-        type: 'passive',
-        name: 'Veteran Presence',
-        description: 'Vtuber B takes 1 less damage from Common and Uncommon characters.',
+        type: 'active',
+        name: 'Rip a Fart',
+        cost: 3,
+        description: 'Deal 1d3 DMG to all enemies, and summon a [1/2] «Toeby» (max. 2).',
       },
     ],
   },
   {
-    setId: 'vs01',
+    setId: 'VS00',
     number: 3,
     image: sampleArt,
     artist: 'SketchSamurai',
@@ -72,44 +73,37 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'vs01',
+    setId: 'VS00',
     number: 4,
     image: sampleArt,
     artist: 'SketchSamurai',
-    name: 'Vtuber D',
-    rarity: 'ultra-rare',
-    maxHp: 14,
-    tokenIds: ['tok-raid'],
+    name: 'Ameiro Jey',
+    rarity: 'common',
+    maxHp: 10,
+    tokenIds: ['tok-kidokafe'],
     skills: [
       {
-        type: 'active',
-        name: 'Collab Stream',
-        cost: 4,
+        type: 'reaction',
+        name: 'Slightly Boba-Addicted',
         description:
-          'Choose another character you control. Until end of turn, it may use one of ' +
-          "Vtuber D's active skills without paying its cost.",
+          'This character takes 1 less DMG from incoming attacks.'
       },
       {
         type: 'active',
-        name: 'Raid Out',
-        cost: 2,
-        description: 'Place Incoming Raid on the field and draw two cards.',
-      },
-      {
-        type: 'passive',
-        name: 'Algorithm Favourite',
-        description: 'Vtuber D cannot be targeted by skills while you control a field token.',
+        name: 'Bobae Party!',
+        cost: 4,
+        description: 'Deal 1d3+1 DMG to all enemies, and deploy a [+1] «KidoKafé» for 3 turns.',
       },
     ],
   },
   // Overnumbered secret print of Vtuber B: 41/40.
-  // No name, HP or skills here — those resolve from vs01-002 at read time.
+  // No name, HP or skills here — those resolve from VS00-002 at read time.
   {
-    setId: 'vs01',
+    setId: 'VS00',
     number: 41,
     image: sampleArt,
     artist: 'SketchSamurai',
     rarity: 'ultra-rare',
-    baseCardId: 'vs01-002',
+    baseCardId: 'VS00-002',
   },
 ]
