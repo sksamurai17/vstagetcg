@@ -11,31 +11,8 @@ import sampleArt from '@/assets/cards/sample-art.jpg'
 export const cards: Card[] = [
   {
     setId: 'VS00',
-    number: 1,
-    image: sampleArt,
-    artist: 'SketchSamurai',
-    name: 'Vtuber A',
-    rarity: 'uncommon',
-    maxHp: 10,
-    tokenIds: ['tok-superchat'],
-    skills: [
-      {
-        type: 'passive',
-        name: 'Chat Momentum',
-        description: 'At the start of your turn, gain 1 resource for each token you control.',
-      },
-      {
-        type: 'active',
-        name: 'Call to Chat',
-        cost: 2,
-        description: 'Summon one Superchat token to your field.',
-      },
-    ],
-  },
-  {
-    setId: 'VS00',
     number: 2,
-    image: sampleArt,
+    image: 'Genie',
     artist: 'SketchSamurai',
     name: 'Genie F. Art',
     rarity: 'common',
@@ -59,23 +36,30 @@ export const cards: Card[] = [
   {
     setId: 'VS00',
     number: 3,
-    image: sampleArt,
+    image: 'Clovoire',
     artist: 'SketchSamurai',
-    name: 'Vtuber C',
+    name: 'Clovoire',
     rarity: 'common',
     maxHp: 8,
     skills: [
       {
-        type: 'passive',
-        name: 'Steady Uploads',
-        description: 'Vtuber C recovers 1 HP at the end of each of your turns.',
+        type: 'active',
+        name: 'Banished to PEC',
+        cost: 2,
+        description: 'Deal 1d3 DMG to an enemy. This enemy cannot take action on your opponent\'s next turn.'
+      },
+      {
+        type: 'active',
+        name: 'Gonna Do Something Dangerous',
+        cost: 4,
+        description: 'Deal 1d3+2 DMG to all enemy characters. If this results in a KO, deal 1 additional DMG to an enemy.',
       },
     ],
   },
   {
     setId: 'VS00',
     number: 4,
-    image: sampleArt,
+    image: 'Jey',
     artist: 'SketchSamurai',
     name: 'Ameiro Jey',
     rarity: 'common',
@@ -96,14 +80,96 @@ export const cards: Card[] = [
       },
     ],
   },
-  // Overnumbered secret print of Vtuber B: 41/40.
-  // No name, HP or skills here — those resolve from VS00-002 at read time.
+  {
+    setId: 'VS00',
+    number: 6,
+    image: 'JoetheJoe',
+    artist: 'SketchSamurai',
+    name: 'JoetheJoe',
+    rarity: 'common',
+    maxHp: 10,
+    skills: [
+      {
+        type: 'passive',
+        name: 'Line Dodge',
+        description:
+          'This character has a 50% chance of dodging incoming attacks from enemy characters.'
+      },
+      {
+        type: 'active',
+        name: 'Halftone Drop Zone',
+        cost: 3,
+        description: 'Deal 1d3+2 DMG to all enemies.',
+      },
+    ],
+  },
+  {
+    setId: 'VS00',
+    number: 10,
+    image: 'Nyxie',
+    artist: 'SketchSamurai',
+    name: 'Nyxie',
+    rarity: 'common',
+    maxHp: 10,
+    skills: [
+      {
+        type: 'active',
+        name: 'Holy Thighble',
+        cost: 2,
+        description:
+          'Restore 1d3+1 HP to an ally character.'
+      },
+      {
+        type: 'active',
+        name: 'VTuber Physics Are Real (And Can Hurt You)',
+        cost: 4,
+        description: 'Deal 1d3+2 DMG to all enemies. If there were any enemy summons on the field,' +
+        'deal 1 additional DMG to an enemy.',
+      },
+    ],
+  },
+  {
+    setId: 'VS00',
+    number: 30,
+    image: 'HisuiCai',
+    artist: 'SketchSamurai',
+    name: 'Hisui Cai',
+    rarity: 'uncommon',
+    maxHp: 10,
+    tokenIds: ['tok-fuspiritlake'],
+    skills: [
+      {
+        type: 'active',
+        name: 'Art Tax',
+        cost: 1,
+        description:
+          'Deal 1 DMG to an enemy and discard 1 of your opponent\'s resources.' +
+          'If their stock is empty, deal 1d3+1 DMG to an enemy.'
+      },
+      {
+        type: 'active',
+        name: 'The Bonds We Share',
+        cost: 4,
+        description: 'Restore 2d3 HP to all ally characters, and deploy a  [+1] «Fu\'s Spirit Lake» for 3 turns.',
+      },
+    ],
+  },
+  // Overnumbered secret prints.
+  // No name, HP or skills here, those get resolved at read time
   {
     setId: 'VS00',
     number: 41,
-    image: sampleArt,
+    image: 'GenieFullArt',
+    artist: 'SketchSamurai',
+    rarity: 'rare',
+    baseCardId: 'VS00-002',
+  },
+  {
+    setId: 'VS00',
+    number: 44,
+    image: 'NyxieFullArt',
     artist: 'SketchSamurai',
     rarity: 'ultra-rare',
-    baseCardId: 'VS00-002',
+    baseCardId: 'VS00-010',
   },
 ]

@@ -10,7 +10,7 @@
 
   /* Skill accents are their own thing, not borrowed from a rarity colour. */
   --vs-skill-active: #808080;
-  --vs-skill-passive: #e6a720;
+  --vs-skill-passive: #E9BF18;
   --vs-skill-reaction: #00ff00;
   --vs-card-radius: 0.75rem;
   /* Card scans are the whole card, border included. Match their ratio exactly. */
@@ -19,6 +19,10 @@
 
 body {
   min-height: 100vh;
+}
+
+.purple-active-color {
+  color: #6c3e97
 }
 
 .vs-hero {

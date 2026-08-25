@@ -5,14 +5,18 @@ import { allCards, sets } from '@/data'
 import CardTile from '@/components/CardTile.vue'
 
 useHead({
-  title: 'VStage — the vtuber card game',
+  title: 'VStage — a VTuber card game',
   meta: [
     {
       name: 'description',
-      content: 'Browse the cards, tokens and rules of VStage, a card game about vtubers.',
+      content: 'Browse the cards, tokens and rules of VStage, a VTuber card game.',
     },
   ],
 })
+
+function getLogoImageURL() {
+  return new URL(`../assets/VStageLogo.png`, import.meta.url).href;
+}
 
 const banner = allCards.slice(0, 5)
 const set = sets[0]
@@ -24,11 +28,10 @@ const set = sets[0]
       <div class="row align-items-center g-4">
         <div class="col-12 col-lg-6">
           <h1 class="display-5 fw-bold">
-            V<span class="text-primary">Stage</span>
+            <img :src="getLogoImageURL()" alt="VStage Logo" style="maxWidth: 160px;" loading="lazy" />
           </h1>
           <p class="lead text-body-secondary">
-            A card game about vtubers. Build a roster, hold the stage, and out-collab your
-            opponent.
+            Welcome to VStage, a VTuber card game! Build your oshi lineup, spawn summons and interactive stage effects, and defeat your opponents!
           </p>
           <div class="d-flex gap-2 flex-wrap">
             <RouterLink class="btn btn-primary" to="/cards">Browse all cards →</RouterLink>
@@ -49,7 +52,7 @@ const set = sets[0]
   <section v-if="set" class="container py-5">
     <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-3">
       <div>
-        <p class="text-body-secondary text-uppercase small mb-1">The set</p>
+        <p class="text-body-secondary text-uppercase small mb-1">The first set</p>
         <h2 class="h3 mb-0">{{ set.name }}</h2>
       </div>
       <RouterLink class="btn btn-sm btn-outline-secondary" to="/sets">Set details →</RouterLink>

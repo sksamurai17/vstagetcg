@@ -5,13 +5,17 @@ import { RouterLink, RouterView } from 'vue-router'
 // The navbar toggle is handled in Vue rather than by Bootstrap's JS bundle,
 // so nothing here touches `window` during the static build.
 const menuOpen = ref(false)
+
+function getLogoImageURL() {
+  return new URL(`./assets/VStageLogo.png`, import.meta.url).href;
+}
 </script>
 
 <template>
   <nav class="navbar navbar-expand-md border-bottom sticky-top bg-body">
     <div class="container">
       <RouterLink class="navbar-brand fw-bold" to="/" @click="menuOpen = false">
-        V<span class="text-primary">Stage</span>
+        <img :src="getLogoImageURL()" alt="VStage Logo" style="maxWidth: 60px;" loading="lazy" />
       </RouterLink>
 
       <button

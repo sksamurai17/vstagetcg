@@ -13,10 +13,10 @@ defineProps<{ tokens: Token[] }>()
         
       </div>
       <div v-if="token.kind === 'summon'" class="d-flex align-items-center gap-2 flex-wrap">
-          <span class="text-danger">{{ token.dmgOutput }} ATK</span> / 
-          <span class="text-success">{{ token.maxHp }} HP</span>
+          <span class="text-danger fw-semibold">{{ token.dmgOutput }} ATK</span> / 
+          <span class="text-success fw-semibold">{{ token.maxHp }} HP</span>
       </div>
-      <span v-else class="text-info">{{ token.duration }}-turn Duration</span>
+      <span v-else class="text-info fw-semibold">{{ token.duration }}-turn Duration</span>
       <span v-if="token.kind === 'summon'">
         <p class="mb-0 mt-1 small">
           <span class="text-body-secondary">Deals {{ token.dmgOutput }} DMG to an enemy at the end of your turn.</span>

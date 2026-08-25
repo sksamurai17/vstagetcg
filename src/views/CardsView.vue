@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue'
 import { RouterView } from 'vue-router'
 import { useHead } from '@unhead/vue'
-import { allCards } from '@/data'
+import { allCards, sets } from '@/data'
 import { RARITIES, RARITY_LABELS, type RarityType } from '@/types/card'
 import CardTile from '@/components/CardTile.vue'
 
@@ -13,11 +13,13 @@ useHead({
 
 const query = ref('')
 const rarity = ref<RarityType | 'all'>('all')
+const set = ref('all')
 
 const visible = computed(() => {
   const q = query.value.trim().toLowerCase()
   return allCards.filter((card) => {
     if (rarity.value !== 'all' && card.rarity !== rarity.value) return false
+    if (set.value !== 'all' && card.setId !== set.value) return false
     if (!q) return true
     return (
       card.name.toLowerCase().includes(q) ||
@@ -39,7 +41,7 @@ const visible = computed(() => {
           v-model="query"
           type="search"
           class="form-control"
-          placeholder="Search by name, id, skill or artist…"
+          placeholder="Search by character name, card ID, skill name, or artist."
           aria-label="Search cards"
         />
       </div>
@@ -47,6 +49,12 @@ const visible = computed(() => {
         <select v-model="rarity" class="form-select" aria-label="Filter by rarity">
           <option value="all">All rarities</option>
           <option v-for="r in RARITIES" :key="r" :value="r">{{ RARITY_LABELS[r] }}</option>
+        </select>
+      </div>
+      <div class="col-12 col-sm-4">
+        <select v-model="set" class="form-select" aria-label="Filter by set">
+          <option value="all">All Sets</option>
+          <option v-for="s in sets" :key="s.name" :value="s.id">{{s.name}}</option>
         </select>
       </div>
     </div>
