@@ -3,7 +3,7 @@ import type { ResolvedCard } from '@/types/card'
 
 defineProps<{ card: ResolvedCard }>()
 
-function getCardImageURL(name) {
+function getCardImageURL(name: string) {
   return new URL(`../assets/cards/${name}.jpg`, import.meta.url).href;
 }
 </script>
