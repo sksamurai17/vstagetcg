@@ -31,10 +31,13 @@ function getLogoImageURL() {
       <div class="collapse navbar-collapse" :class="{ show: menuOpen }">
         <ul class="navbar-nav ms-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <RouterLink class="nav-link" to="/cards" @click="menuOpen = false">Cards</RouterLink>
+            <RouterLink class="nav-link" to="/cards" @click="menuOpen = false">Card Gallery</RouterLink>
           </li>
           <li class="nav-item">
             <RouterLink class="nav-link" to="/sets" @click="menuOpen = false">Sets</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink class="nav-link" to="/lineup" @click="menuOpen = false">Lineup</RouterLink>
           </li>
           <li class="nav-item">
             <RouterLink class="nav-link" to="/rules" @click="menuOpen = false">Rules</RouterLink>

@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { getSet, getTokensFor } from '@/data'
+import { computed, inject } from 'vue'
+import { getSet, getTokensFor, vtubers } from '@/data'
 import { collectorNumber, type ResolvedCard } from '@/types/card'
 import CardArt from './CardArt.vue'
 import RarityPill from './RarityPill.vue'
 import SkillList from './SkillList.vue'
+import SocialsBar from './SocialsBar.vue'
 import TokenList from './TokenList.vue'
 
 const props = defineProps<{ card: ResolvedCard }>()
@@ -26,14 +27,13 @@ const tokens = computed(() => getTokensFor(props.card))
     </div>
 
     <div class="col-12 col-sm-7">
-      <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
-        <span class="text-body-secondary small font-monospace">{{ card.setId }} {{ set?.name ?? card.setId }} · {{ number }}</span>
-        <span v-if="card.isReprint" class="badge text-bg-warning">Secret print</span>
+      <div class="d-flex text-center align-items-center gap-2 mb-1 flex-wrap">
+        <h1 class="h3 mb-1">{{ card.name }}</h1>
+        <RarityPill :rarity="card.rarity" />
       </div>
 
       <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
-        <h1 class="h3 mb-1">{{ card.name }}</h1>
-        <RarityPill :rarity="card.rarity" />
+        <span class="text-body-secondary small font-monospace">{{ card.setId }} {{ set?.name ?? card.setId }} · {{ number }}</span>
       </div>
 
       <p v-if="card.isReprint" class="alert alert-secondary py-2 small">
@@ -53,6 +53,10 @@ const tokens = computed(() => getTokensFor(props.card))
         <h2 class="h5 text-body-secondary">Tokens Produced</h2>
         <TokenList :tokens="tokens" />
       </template>
+
+      <div v-if="card.handle && vtubers[card.handle] && vtubers[card.handle]?.socials" class="d-flex align-items-center gap-2 mt-2" style="flex-direction: row;">
+        <SocialsBar :socials="vtubers[card.handle]?.socials ?? []"/>
+      </div>
     </div>
   </div>
 </template>

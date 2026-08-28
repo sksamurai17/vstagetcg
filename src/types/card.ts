@@ -51,6 +51,7 @@ export type BaseCard = {
   number: number
   name: string
   rarity: RarityType
+  handle?: string
   maxHp: number
   skills: Skill[]
   image: string
@@ -89,6 +90,7 @@ export type ResolvedCard = {
   number: number
   name: string
   rarity: RarityType
+  handle?: string
   maxHp: number
   skills: Skill[]
   image: string
@@ -96,6 +98,14 @@ export type ResolvedCard = {
   tokenIds: string[]
   isReprint: boolean
   baseCardId?: string
+}
+
+/** Struct containing profile info for a specific VTuber. */
+export type VTuber = {
+  name: string
+  sets: string[]
+  socials: string[]
+  pfp: string
 }
 
 export function isReprint(card: Card): card is Reprint {

@@ -9,8 +9,9 @@ import {
 import { cards } from './cards'
 import { sets } from './sets'
 import { tokens } from './tokens'
+import { vtubers } from './vtubers'
 
-export { cards, sets, tokens }
+export { cards, sets, tokens, vtubers }
 
 const setsById = new Map<string, CardSet>(sets.map((s) => [s.id, s]))
 const tokensById = new Map<string, Token>(tokens.map((t) => [t.id, t]))

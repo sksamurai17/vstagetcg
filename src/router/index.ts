@@ -25,10 +25,11 @@ export const routes: RouteRecordRaw[] = [
   {
     path: '/cards',
     component: () => import('@/views/CardsView.vue'),
-    children: [{ path: '', name: 'cards', component: NoOverlay }, ...cardRoutes],
+    children: [{ path: '', name: 'card', component: NoOverlay }, ...cardRoutes],
   },
   { path: '/sets', name: 'sets', component: () => import('@/views/SetsView.vue') },
   { path: '/rules', name: 'rules', component: () => import('@/views/RulesView.vue') },
+  { path: '/lineup', name: 'lineup', component: () => import('@/views/LineupView.vue')},
   {
     path: '/:pathMatch(.*)*',
     name: 'not-found',

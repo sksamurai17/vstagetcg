@@ -13,13 +13,13 @@ useHead({
 
 const query = ref('')
 const rarity = ref<RarityType | 'all'>('all')
-const set = ref('all')
+const set = ref('VS00')
 
 const visible = computed(() => {
   const q = query.value.trim().toLowerCase()
   return allCards.filter((card) => {
     if (rarity.value !== 'all' && card.rarity !== rarity.value) return false
-    if (set.value !== 'all' && card.setId !== set.value) return false
+    if (card.setId !== set.value) return false
     if (!q) return true
     return (
       card.name.toLowerCase().includes(q) ||
@@ -33,7 +33,7 @@ const visible = computed(() => {
 
 <template>
   <div class="container py-4">
-    <h1 class="h2 mb-3">Cards</h1>
+    <h1 class="h2 mb-3">Card Gallery</h1>
 
     <div class="row g-2 mb-4">
       <div class="col-12 col-sm-8">
@@ -53,7 +53,6 @@ const visible = computed(() => {
       </div>
       <div class="col-12 col-sm-4">
         <select v-model="set" class="form-select" aria-label="Filter by set">
-          <option value="all">All Sets</option>
           <option v-for="s in sets" :key="s.name" :value="s.id">{{s.name}}</option>
         </select>
       </div>
