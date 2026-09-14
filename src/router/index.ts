@@ -23,7 +23,7 @@ const cardRoutes: RouteRecordRaw[] = allCards.map((card) => ({
 export const routes: RouteRecordRaw[] = [
   { path: '/', name: 'home', component: () => import('@/views/HomeView.vue') },
   {
-    path: '/cards/:set?',
+    path: '/cards',
     component: () => import('@/views/CardsView.vue'),
     children: [{ path: '', name: 'card', component: NoOverlay }, ...cardRoutes],
   },

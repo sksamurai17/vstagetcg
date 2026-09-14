@@ -54,7 +54,7 @@ const set = sets[0]
         <p class="text-body-secondary text-uppercase small mb-1">The debut set</p>
         <h2 class="h3 mb-0">{{ set.name }}</h2>
       </div>
-      <RouterLink class="btn btn-sm btn-outline-secondary" :to="`/cards/${set.id}`">Set details →</RouterLink>
+      <RouterLink class="btn btn-sm btn-outline-secondary" :to="{ path: `/cards`, query: { set: `${set.id}`}}">Set details →</RouterLink>
     </div>
 
     <p class="text-body-secondary">{{ set.description }}</p>

@@ -40,7 +40,7 @@ function signature(setId: string) {
         </div>
       </div>
 
-      <RouterLink class="btn btn-sm btn-outline-secondary mt-3" :to="`/cards/${set.id}`">
+      <RouterLink class="btn btn-sm btn-outline-secondary mt-3" :to="{ path: `/cards`, query: { set: `${set.id}` }}">
         See all cards in this set →
       </RouterLink>
     </section>

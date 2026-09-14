@@ -14,8 +14,8 @@ useHead({
 const route = useRoute()
 const query = ref('')
 const rarity = ref<RarityType | 'all'>('all')
-const defaultSet = route.params.set || 'VS00'
-const set = ref(defaultSet)
+const resolvedSet = sets.some(s => s.id === route.query.set) ? (route.query.set || 'VS00') : 'VS00'
+const set = ref(resolvedSet)
 
 const visible = computed(() => {
   const q = query.value.trim().toLowerCase()
