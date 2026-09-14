@@ -1,226 +1,254 @@
 import type { VTuber } from "@/types/card";
 
 export const vtubers: Record<string, VTuber> = {
+    'sksamurai17': {
+        name: 'SketchSamurai',
+        handle: 'sksamurai17',
+        sets: ['VS00'],
+        socials: [
+            'https://x.com/sksamurai17',
+            'https://bsky.app/profile/sksamurai17.bsky.social',
+            'https://www.instagram.com/sksamurai17',
+            'https://www.twitch.tv/sketchsamurai',
+            'https://vgen.co/sksamurai17',
+            'https://sksamurai17.etsy.com'
+        ]
+    },
     'genieart_': {
         name: 'Genie F. Art',
+        handle: 'genieart_',
         sets: ['VS00'],
         socials: [
             'https://x.com/genieart_',
             'https://bsky.app/profile/genieart.bsky.social',
             'https://www.instagram.com/genieart',
             'https://www.twitch.tv/genieart',
-            'https://www.tiktok.com/@genieart'
-        ],
-        pfp: 'https://pbs.twimg.com/profile_images/1830997178950762496/4-tvwaAL_400x400.jpg'
+            'https://www.tiktok.com/@genieart',
+            'https://vgen.co/genieart',
+            'https://ko-fi.com/genieart',
+            'https://genieartsu.etsy.com',
+            'https://genieart.bigcartel.com'
+        ]
     },
     'Hisui_Cai': {
         name: 'Hisui Cai',
+        handle: 'Hisui_Cai',
         sets: ['VS00'],
         socials: [
             'https://x.com/Hisui_Cai',
-            'https://www.twitch.tv/hisuicai'
-        ],
-        pfp: 'https://pbs.twimg.com/profile_images/2006266413514625024/2W6-X7um_400x400.jpg'
+            'https://www.twitch.tv/hisuicai',
+            'https://www.instagram.com/hisuicai',
+            'https://www.youtube.com/channel/UCbOzM6wxnaKmHNIkEkC9PlA',
+            'https://vgen.co/hisuicai',
+            'https://bsky.app/profile/hisuicai.bsky.social',
+            'https://ko-fi.com/hisuicai'
+        ]
     },
     'jey_vt': {
         name: 'Ameiro Jey',
+        handle: 'jey_vt',
         sets: ['VS00'],
         socials: [
             'https://x.com/jey_vt',
             'https://www.twitch.tv/jey_vt',
-            'https://www.youtube.com/@jey_vt'
-        ],
-        pfp: 'https://pbs.twimg.com/profile_images/2079243867489226752/uCC70sj8_400x400.jpg'
+            'https://www.youtube.com/@jey_vt',
+            'https://bsky.app/profile/kidokaproject.bsky.social',
+            'https://www.tiktok.com/@jeyneedsboba',
+            'https://ko-fi.com/kidokaproject'
+        ]
     },
     'JoetheJoe9': {
         name: 'JoetheJoe',
+        handle: 'JoetheJoe9',
         sets: ['VS00'],
         socials: [
             'https://x.com/JoetheJoe9',
-            'https://www.twitch.tv/joethejoe'
-        ],
-        pfp: 'https://pbs.twimg.com/profile_images/2002507917077954560/vEHOuVt0_400x400.jpg'
+            'https://www.twitch.tv/joethejoe',
+            'https://vgen.co/JoetheJoe',
+            'https://bsky.app/profile/joethejoe.bsky.social'
+        ]
     },
     'clovoire': {
         name: 'Clovoire',
+        handle: 'clovoire',
         sets: ['VS00'],
         socials: [
             'https://www.instagram.com/clovoire',
             'https://www.twitch.tv/clovoire',
             'https://x.com/clovoire',
-            'https://bsky.app/profile/clovoire.bsky.social'
-        ],
-        pfp: 'https://pbs.twimg.com/profile_images/1859050749759455232/dtULa9vf_400x400.jpg'
+            'https://bsky.app/profile/clovoire.bsky.social',
+            'https://vgen.co/clovoire',
+            'https://ko-fi.com/clovoire',
+            'https://clovoire.bigcartel.com',
+            'https://clovoire.etsy.com'
+        ]
     },
     'nyxiena': {
         name: 'Nyxie',
+        handle: 'nyxiena',
         sets: ['VS00'],
         socials: [
             'https://www.tiktok.com/@nyxiena',
             'https://www.twitch.tv/nyxie',
             'https://x.com/nyxiena',
             'https://www.youtube.com/@nyxiena',
-            'https://www.instagram.com/nyxiena/'
-        ],
-        pfp: 'https://pbs.twimg.com/profile_images/2040355721863467009/OPe-pTeL_400x400.jpg'
+            'https://www.instagram.com/nyxiena',
+            'https://ko-fi.com/nyxiena'
+        ]
     },
     'a12flames': {
         name: 'Deetz',
+        handle: 'A12FLAMES',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/2068941539150065664/EKHdopXE_400x400.jpg'
-    },
-    'aureliac_vt': {
-        name: 'Aurelia Caelestis',
-        sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/1590748568117051400/BREJXxqo_400x400.jpg'
-    },
-    'civilfortissimo': {
-        name: 'Civil Fortissimo',
-        sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/1920721857256583168/ycay0rlq_400x400.jpg'
+        socials: [
+            'https://www.youtube.com/@A12FLAMES',
+            'https://x.com/A12FLAMES',
+            'https://bsky.app/profile/a12flames.bsky.social',
+            'https://www.twitch.tv/a12flames',
+            'https://vgen.co/a12flames'
+        ]
     },
     'wynnterra': {
         name: 'Wynn Terra',
+        handle: 'wynnterra',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/2066547431110524928/ljKPNET3_400x400.jpg'
+        socials: [
+
+        ]
     },
     'cookieteaa': {
         name: 'Cookie Tea',
+        handle: 'cookieteaa',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/1683307199299457024/BohrDA7h_400x400.jpg'
+        socials: []
     },
     'makosameshima': {
         name: 'Mako Sameshima',
+        handle: 'makosameshima',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/2051304014654943233/cdAclfH2_400x400.jpg'
+        socials: []
     },
     'fangguu': {
         name: 'Fang Guu',
+        handle: 'fangguu',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/2055121971352883200/d75Nqkc5_400x400.jpg'
+        socials: []
     },
     'imorimei': {
         name: 'Mei Imori',
+        handle: 'imorimei',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/2060897276592054274/1eeTUYjM_400x400.jpg'
+        socials: []
     },
     'noromin': {
         name: 'Noromin',
+        handle: 'noromin',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/2072035149353537536/e09qkR5S_400x400.jpg'
+        socials: []
     },
     'azukitou': {
         name: 'Azukitou',
+        handle: 'azukitou',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/1914127633148968960/VZaC0PJ8_400x400.jpg'
+        socials: []
     },
     'sae1627_': {
         name: 'Hoshino Sae',
+        handle: 'sae1627_',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/2087415727523586048/HAIGfv_K_400x400.jpg'
+        socials: []
     },
-    'akioblaze': {
+    'AkioBlaze': {
         name: 'Akioblaze',
+        handle: 'AkioBlaze',
         sets: ['VS00'],
         socials: [
             'https://bsky.app/profile/akioblaze.bsky.social',
             'https://x.com/AkioBlaze'
-        ],
-        pfp: 'https://pbs.twimg.com/profile_images/1966297230123376640/L5jSUZ2x_400x400.png'
+        ]
     },
     'yoruhanamai': {
         name: 'Yoruhana Mai',
+        handle: 'yoruhanamai',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/1707863131463340033/DO2cZnzv_400x400.jpg'
+        socials: []
     },
     'rira': {
         name: 'Chiyong Rira',
+        handle: 'rira',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/1970190941060505604/YiLBkO7p_400x400.jpg'
+        socials: []
     },
     'spellydoesart': {
         name: 'Spelly',
+        handle: 'spellydoesart',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/1857808965054115840/STqBu02s_400x400.jpg'
+        socials: []
     },
     'sayurikitsune': {
         name: 'Sayuri Kitsune',
+        handle: 'sayurikitsune',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/2055787406985482241/0AiS8PZK_400x400.jpg'
+        socials: []
     },
     'kazzihino': {
         name: 'Kazzi Hino',
+        handle: 'kazzihino',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/1847461163904245760/JL7mZ-tK_400x400.jpg'
+        socials: []
     },
     'hyunicat': {
         name: 'Hyuni',
+        handle: 'hyunicat',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/2020403929968971776/JbsRNE6d_400x400.jpg'
+        socials: []
     },
     'myfroggythighs': {
         name: 'Kaeguri',
+        handle: 'myfroggythighs',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/2049442545323958272/NWS5VUue_400x400.jpg'
+        socials: []
     },
     'sakoneko': {
         name: 'Sakoneko',
+        handle: 'sakoneko_',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/1960400436843683840/ySyzlVy-_400x400.jpg'
+        socials: []
     },
     'teafiee': {
         name: 'Teafiee',
+        handle: 'TeafieeCha',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/1972679209681129472/mhMksIv4_400x400.jpg'
+        socials: []
     },
     'wiiiyaa': {
         name: 'Wiiiyaa',
+        handle: 'wiiiyaa',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/2004339943133663233/9MjYM9fZ_400x400.jpg'
+        socials: []
     },
     'omelettesss': {
         name: 'Omelette',
+        handle: 'omelettessss',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/2035595700701184000/QGe0DQwE_400x400.jpg'
+        socials: []
     },
     'tirumisa': {
         name: 'Tirumisa',
+        handle: 'tirumisa',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/2081912150612729856/gDkqbia-_400x400.jpg'
+        socials: []
     },
     'strawberry_moonua': {
         name: 'Strawberry Moonua',
+        handle: 'strawberry_moonua',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/2075658178566688768/uMjekZ3r_400x400.jpg'
+        socials: []
     },
     'meekmac_art': {
         name: 'Meekmac',
+        handle: 'meekmac_art',
         sets: ['VS00'],
-        socials: [],
-        pfp: 'https://pbs.twimg.com/profile_images/2042699324484915202/BASOu_iV_400x400.jpg'
+        socials: []
     },
 }

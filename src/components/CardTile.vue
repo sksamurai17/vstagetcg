@@ -15,7 +15,7 @@ const number = computed(() => {
 </script>
 
 <template>
-  <RouterLink class="vs-card" :data-rarity="card.rarity" :to="`/cards/${card.id}`">
+  <RouterLink class="vs-card" :data-rarity="card.rarity" :to="`/cards/${card.setId}/${card.id}`">
     <div class="vs-card__art" style="border-radius:15px / 25px; overflow:hidden;">
       <CardArt :card="card"/>
     </div>

@@ -42,6 +42,7 @@ function resolve(card: Card): ResolvedCard {
     maxHp: base.maxHp,
     skills: base.skills,
     tokenIds: base.tokenIds ?? [],
+    handle: base.handle ?? '',
     // ...while rarity, art and its credit belong to this printing.
     rarity: card.rarity,
     image: card.image,
@@ -60,6 +61,10 @@ const cardsById = new Map<string, ResolvedCard>(allCards.map((c) => [c.id, c]))
 
 export function getCard(id: string): ResolvedCard | undefined {
   return cardsById.get(id)
+}
+
+export function bannerCards(): ResolvedCard[] {
+  return [getCard('VS00-001'), getCard('VS00-002'), getCard('VS00-009')].filter((c) => c !== undefined)
 }
 
 export function getSet(id: string): CardSet | undefined {

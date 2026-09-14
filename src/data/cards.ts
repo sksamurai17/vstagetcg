@@ -1,4 +1,4 @@
-import type { Card } from '@/types/card'
+import { type Card, PassiveType } from '@/types/card'
 
 // Shared placeholder art. Swap per card as real art arrives: add another
 // `import x from '@/assets/cards/x.jpg'` and point that card's `image` at it.
@@ -11,6 +11,28 @@ import sampleArt from '@/assets/cards/sample-art.jpg'
 export const cards: Card[] = [
   {
     setId: 'VS00',
+    number: 1,
+    image: 'SketchSamurai',
+    artist: 'SketchSamurai',
+    name: 'SketchSamurai',
+    handle: 'sksamurai17',
+    rarity: 'common',
+    maxHp: 8,
+    skills: [
+      {
+        type: 'passive',
+        name: PassiveType.Lurker
+      },
+      {
+        type: 'active',
+        name: 'The Art Grind Never Ends',
+        cost: 3,
+        description: 'Deal [1d6+2] DMG to an enemy target.',
+      },
+    ],
+  },
+  {
+    setId: 'VS00',
     number: 2,
     image: 'Genie',
     artist: 'SketchSamurai',
@@ -21,16 +43,14 @@ export const cards: Card[] = [
     tokenIds: ['tok-toeby'],
     skills: [
       {
-        type: 'active',
-        name: 'Glizzy Run',
-        cost: 1,
-        description: 'Restore 1d3+1 HP to an ally character.',
+        type: 'passive',
+        name: PassiveType.Collab
       },
       {
         type: 'active',
         name: 'Rip a Fart',
         cost: 3,
-        description: 'Deal 1d3 DMG to all enemies, and summon a [1/2] «Toeby» (max. 2).',
+        description: 'Deal [1d6] DMG to an enemy target, and summon a [2/2] «Toeby» to any lane.',
       },
     ],
   },
@@ -42,19 +62,18 @@ export const cards: Card[] = [
     artist: 'SketchSamurai',
     name: 'Clovoire',
     rarity: 'common',
-    maxHp: 8,
+    maxHp: 9,
+    tokenIds: ['tok-dust-bunny'],
     skills: [
       {
-        type: 'active',
-        name: 'Banished to PEC',
-        cost: 2,
-        description: 'Deal 1d3 DMG to an enemy. This enemy cannot take action on your opponent\'s next turn.'
+        type: 'passive',
+        name: PassiveType.TimedOut
       },
       {
         type: 'active',
-        name: 'Gonna Do Something Dangerous',
-        cost: 4,
-        description: 'Deal 1d3+2 DMG to all enemy characters. If this results in a KO, deal 1 additional DMG to an enemy.',
+        name: 'Banished to PEC',
+        cost: 3,
+        description: 'Deal [1d6] DMG to an enemy target, and summon a [1/3] «Monstar Pal» to any lane.',
       },
     ],
   },
@@ -66,76 +85,20 @@ export const cards: Card[] = [
     artist: 'SketchSamurai',
     name: 'Ameiro Jey',
     rarity: 'common',
-    maxHp: 10,
+    maxHp: 9,
     tokenIds: ['tok-kidokafe'],
     skills: [
       {
-        type: 'reaction',
+        type: 'active',
         name: 'Slightly Boba-Addicted',
-        description:
-          'This character takes 1 less DMG from incoming attacks.'
-      },
-      {
-        type: 'active',
-        name: 'Bobae Party!',
-        cost: 4,
-        description: 'Deal 1d3+1 DMG to all enemies, and deploy a [+1] «KidoKafé» for 3 turns.',
-      },
-    ],
-  },
-  {
-    setId: 'VS00',
-    number: 6,
-    image: 'JoetheJoe',
-    handle: 'JoetheJoe9',
-    artist: 'SketchSamurai',
-    name: 'JoetheJoe',
-    rarity: 'common',
-    maxHp: 10,
-    skills: [
-      {
-        type: 'passive',
-        name: 'Line Dodge',
-        description:
-          'This character has a 50% chance of dodging incoming attacks from enemy characters.'
-      },
-      {
-        type: 'active',
-        name: 'Halftone Drop Zone',
         cost: 3,
-        description: 'Deal 1d3+2 DMG to all enemies.',
+        description: 'Deal [1d6+2] DMG to an enemy target. \nBoost (+2): Deploy «KidoKafé».',
       },
     ],
   },
   {
     setId: 'VS00',
-    number: 10,
-    image: 'Nyxie',
-    handle: 'nyxiena',
-    artist: 'SketchSamurai',
-    name: 'Nyxie',
-    rarity: 'common',
-    maxHp: 10,
-    skills: [
-      {
-        type: 'active',
-        name: 'Holy Thighble',
-        cost: 2,
-        description:
-          'Restore 1d3+1 HP to an ally character.'
-      },
-      {
-        type: 'active',
-        name: 'VTuber Physics Are Real (And Can Hurt You)',
-        cost: 4,
-        description: 'Deal 1d3+2 DMG to all enemies. If there were any enemy summons on the field,' +
-        'deal 1 additional DMG to an enemy.',
-      },
-    ],
-  },
-  {
-    setId: 'VS00',
-    number: 30,
+    number: 5,
     image: 'HisuiCai',
     handle: 'Hisui_Cai',
     artist: 'SketchSamurai',
@@ -146,17 +109,77 @@ export const cards: Card[] = [
     skills: [
       {
         type: 'active',
-        name: 'Art Tax',
-        cost: 1,
-        description:
-          'Deal 1 DMG to an enemy and discard 1 of your opponent\'s resources.' +
-          'If their stock is empty, deal 1d3+1 DMG to an enemy.'
+        name: 'Art Tax! Pay Up, Buddy',
+        cost: 3,
+        description: 'Discard [1] of your opponent\'s Hype and restore [2] HP to all ally characters (inclusive).\nBoost (+2): Deploy «Fu\'s Spirit Lake».',
+      },
+    ],
+  },
+  {
+    setId: 'VS00',
+    number: 6,
+    image: 'Deetz',
+    handle: 'a12flames',
+    artist: 'SketchSamurai',
+    name: 'Deetz',
+    rarity: 'common',
+    maxHp: 9,
+    skills: [
+      {
+        type: 'passive',
+        name: PassiveType.Collab,
+        x_count: 2
       },
       {
         type: 'active',
-        name: 'The Bonds We Share',
+        name: 'Blazing Fist',
+        cost: 3,
+        description: 'Deal [1d6+2] DMG to an enemy target.',
+      },
+    ],
+  },
+  {
+    setId: 'VS00',
+    number: 7,
+    image: 'JoetheJoe',
+    handle: 'JoetheJoe9',
+    artist: 'SketchSamurai',
+    name: 'JoetheJoe',
+    rarity: 'common',
+    maxHp: 8,
+    skills: [
+      {
+        type: 'passive',
+        name: PassiveType.Lurker
+      },
+      {
+        type: 'active',
+        name: 'Halftone Drop Zone',
+        cost: 3,
+        description: 'Deal [1d6+2] DMG to an enemy target.',
+      },
+    ],
+  },
+  {
+    setId: 'VS00',
+    number: 9,
+    image: 'Nyxie',
+    handle: 'nyxiena',
+    artist: 'SketchSamurai',
+    name: 'Nyxie',
+    rarity: 'common',
+    maxHp: 9,
+    skills: [
+      {
+        type: 'passive',
+        name: PassiveType.Lurker
+      },
+      {
+        type: 'active',
+        name: 'Holy Thighble',
         cost: 4,
-        description: 'Restore 2d3 HP to all ally characters, and deploy a  [+1] «Fu\'s Spirit Lake» for 3 turns.',
+        description:
+          'Deal [1d6] DMG to an enemy target. If there are any enemy summons on the outer lanes, deal [1] additional DMG to this target.'
       },
     ],
   },
@@ -164,18 +187,20 @@ export const cards: Card[] = [
   // No name, HP or skills here, those get resolved at read time
   {
     setId: 'VS00',
-    number: 41,
+    number: 37,
     image: 'GenieFullArt',
     artist: 'SketchSamurai',
     rarity: 'rare',
     baseCardId: 'VS00-002',
+    handle: 'genieart_'
   },
   {
     setId: 'VS00',
-    number: 44,
+    number: 40,
     image: 'NyxieFullArt',
     artist: 'SketchSamurai',
     rarity: 'ultra-rare',
-    baseCardId: 'VS00-010',
+    baseCardId: 'VS00-009',
+    handle: 'nyxiena'
   },
 ]

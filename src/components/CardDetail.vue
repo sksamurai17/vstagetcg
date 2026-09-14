@@ -36,11 +36,9 @@ const tokens = computed(() => getTokensFor(props.card))
         <span class="text-body-secondary small font-monospace">{{ card.setId }} {{ set?.name ?? card.setId }} · {{ number }}</span>
       </div>
 
-      <p v-if="card.isReprint" class="alert alert-secondary py-2 small">
-        An overnumbered print of
-        <RouterLink :to="`/cards/${card.baseCardId}`">{{ card.baseCardId }}</RouterLink> with the same
-        skills and HP as the base card, but with higher rarity and full artwork.
-      </p>
+      <div v-if="card.isReprint" class="badge text-bg-primary mb-2">
+        <RouterLink class="nav-link" :to="`/cards/${card.baseCardId}`">View Base Card</RouterLink>
+      </div>
 
       <h5 class="text-body-secondary">
         <span class="text-success fw-semibold">{{ card.maxHp }} HP</span>
@@ -51,11 +49,14 @@ const tokens = computed(() => getTokensFor(props.card))
 
       <template v-if="tokens.length">
         <h2 class="h5 text-body-secondary">Tokens Produced</h2>
-        <TokenList :tokens="tokens" />
+        <TokenList :tokens="tokens" class="mb-3"/>
       </template>
 
-      <div v-if="card.handle && vtubers[card.handle] && vtubers[card.handle]?.socials" class="d-flex align-items-center gap-2 mt-2" style="flex-direction: row;">
-        <SocialsBar :socials="vtubers[card.handle]?.socials ?? []"/>
+      <div v-if="card.handle && vtubers[card.handle] && vtubers[card.handle]?.socials">
+        <h2 class="h5 text-body-secondary">Socials</h2></br>
+        <div class="d-flex align-items-center gap-2 mb-4">
+          <SocialsBar :socials="vtubers[card.handle]?.socials ?? []"/>
+        </div>
       </div>
     </div>
   </div>

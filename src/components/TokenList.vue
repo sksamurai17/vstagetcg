@@ -17,22 +17,9 @@ defineProps<{ tokens: Token[] }>()
           <span class="text-success fw-semibold">{{ token.maxHp }} HP</span>
       </div>
       <span v-else class="text-info fw-semibold">{{ token.duration }}-turn Duration</span>
-      <span v-if="token.kind === 'summon'">
+      <span v-if="token.kind === 'stage-effect'">
         <p class="mb-0 mt-1 small">
-          <span class="text-body-secondary">Deals {{ token.dmgOutput }} DMG to an enemy at the end of your turn.</span>
-        </p>
-      </span>
-      <span v-else>
-        <p class="mb-0 mt-1 small">
-          <span v-if="token.effectOutput.startsWith('+')">
-            <span class="text-body-secondary">Restores {{ token.effectOutput.slice(1) }} HP to an ally character at the end of your turn.</span>
-          </span>
-          <span v-else-if="token.effectOutput.startsWith('-')">
-            <span class="text-body-secondary">Reduces incoming DMG by {{ token.effectOutput.slice(1) }} for an ally during your opponent's next turn.</span>
-          </span>
-          <span v-else>
-            <span class="text-body-secondary">Deals {{ token.effectOutput }} DMG to an enemy at the end of your turn.</span>
-          </span>
+          <span class="text-body-secondary">{{ token.effectOutput }}</span>
         </p>
       </span>
     </li>

@@ -37,9 +37,6 @@ function getLogoImageURL() {
             <RouterLink class="nav-link" to="/sets" @click="menuOpen = false">Sets</RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink class="nav-link" to="/lineup" @click="menuOpen = false">Lineup</RouterLink>
-          </li>
-          <li class="nav-item">
             <RouterLink class="nav-link" to="/rules" @click="menuOpen = false">Rules</RouterLink>
           </li>
         </ul>

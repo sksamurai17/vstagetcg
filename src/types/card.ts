@@ -11,6 +11,11 @@
  */
 
 export type RarityType = 'common' | 'uncommon' | 'rare' | 'ultra-rare'
+export enum PassiveType {
+  TimedOut = 'Timed Out',
+  Collab = 'Collab XXX',
+  Lurker = 'Lurker'
+}
 
 /** Ascending order — also the canonical sort order for rarity. */
 export const RARITIES = [
@@ -27,10 +32,15 @@ export const RARITY_LABELS: Record<RarityType, string> = {
   'ultra-rare': 'Ultra Rare',
 }
 
+export const PASSIVE_DESCRIPTIONS: Record<PassiveType, string> = {
+  "Timed Out": 'Enemy targets attacked by this character cannot take action on your opponent\'s next turn.',
+  "Collab XXX": 'When this character attacks an enemy target, deal [XXX] additional DMG to adjacent enemy targets.',
+  "Lurker": 'Once during your opponent\'s turn, when this character is targeted by an attack, you may spend 3 Hype to evade.'
+}
+
 /** Active skills cost resources; passive and reactive skills cannot. */
 export type Skill =
-  | { type: 'passive'; name: string; description: string }
-  | { type: 'reaction'; name: string; description: string }
+  | { type: 'passive'; name: PassiveType; x_count?: number }
   | { type: 'active'; name: string; description: string; cost: number }
 
 type TokenBase = {
@@ -103,9 +113,9 @@ export type ResolvedCard = {
 /** Struct containing profile info for a specific VTuber. */
 export type VTuber = {
   name: string
+  handle: string
   sets: string[]
   socials: string[]
-  pfp: string
 }
 
 export function isReprint(card: Card): card is Reprint {
@@ -121,3 +131,39 @@ export function cardId(setId: string, number: number): string {
 export function collectorNumber(number: number, totalCards: number): string {
   return `${String(number).padStart(String(totalCards).length, '0')}/${totalCards}`
 }
+
+export function skillDescription(skill: Skill): string {
+  if (skill.type === 'active') {
+    return skill.description
+  }
+  if (passiveHasXValue(skill.name)) {
+    return PASSIVE_DESCRIPTIONS[skill.name].replace('XXX', String(skill.x_count ?? 1))
+  }
+  return PASSIVE_DESCRIPTIONS[skill.name]
+}
+
+function passiveHasXValue(passive: string): boolean {
+  switch (passive) {
+    case 'Collab XXX': return true
+    default: return false
+  }
+}
+
+export function skillName(skill: Skill): string {
+  if (skill.type === 'active') {
+    return skill.name
+  }
+  if (passiveHasXValue(skill.name)) {
+    return skill.name.replace('XXX', String(skill.x_count ?? 1))
+  }
+  return skill.name
+}
+
+export function passiveSkillColor(passive: string): string {
+  switch (passive) {
+    case 'Collab XXX': return 'danger'
+    case 'Lurker': return 'success'
+    case 'Timed Out': return 'primary'
+    default: return 'warning'
+  }
+} 
