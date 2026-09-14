@@ -14,7 +14,8 @@ export type RarityType = 'common' | 'uncommon' | 'rare' | 'ultra-rare'
 export enum PassiveType {
   TimedOut = 'Timed Out',
   Collab = 'Collab XXX',
-  Lurker = 'Lurker'
+  Lurker = 'Lurker',
+  CozyVibes = 'Cozy Vibes XXX'
 }
 
 /** Ascending order — also the canonical sort order for rarity. */
@@ -34,8 +35,10 @@ export const RARITY_LABELS: Record<RarityType, string> = {
 
 export const PASSIVE_DESCRIPTIONS: Record<PassiveType, string> = {
   "Timed Out": 'Enemy targets attacked by this character cannot take action on your opponent\'s next turn.',
-  "Collab XXX": 'When this character attacks an enemy target, deal [XXX] additional DMG to adjacent enemy targets.',
-  "Lurker": 'Once during your opponent\'s turn, when this character is targeted by an attack, you may spend 3 Hype to evade.'
+  "Collab XXX": 'When this character attacks an enemy target, deal XXX additional DMG to adjacent enemy targets.',
+  "Lurker": 'Once during your opponent\'s turn, when this character is targeted by an enemy, you may spend 3 Hype to evade the attack.',
+  "Cozy Vibes XXX": 'At the start of your turn, before your pre-combat phase, restore XXX HP to adjacent ally characters.'
+
 }
 
 /** Active skills cost resources; passive and reactive skills cannot. */
@@ -136,24 +139,17 @@ export function skillDescription(skill: Skill): string {
   if (skill.type === 'active') {
     return skill.description
   }
-  if (passiveHasXValue(skill.name)) {
+  if (skill.name.includes('XXX')) {
     return PASSIVE_DESCRIPTIONS[skill.name].replace('XXX', String(skill.x_count ?? 1))
   }
   return PASSIVE_DESCRIPTIONS[skill.name]
-}
-
-function passiveHasXValue(passive: string): boolean {
-  switch (passive) {
-    case 'Collab XXX': return true
-    default: return false
-  }
 }
 
 export function skillName(skill: Skill): string {
   if (skill.type === 'active') {
     return skill.name
   }
-  if (passiveHasXValue(skill.name)) {
+  if (skill.name.includes('XXX')) {
     return skill.name.replace('XXX', String(skill.x_count ?? 1))
   }
   return skill.name

@@ -10,7 +10,7 @@ useHead({ title: 'Sets — VStage' })
 /** A few signature cards per set, rather than the full list. */
 function signature(setId: string) {
   return [...cardsInSet(setId)]
-    .sort((a, b) => RARITIES.indexOf(b.rarity) - RARITIES.indexOf(a.rarity))
+    .sort((a, b) => (a.rarity == b.rarity) ? (b.number - a.number) : RARITIES.indexOf(b.rarity) - RARITIES.indexOf(a.rarity))
     .slice(0, 5)
 }
 </script>

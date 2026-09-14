@@ -58,13 +58,15 @@ export const allCards: ResolvedCard[] = cards
   .sort((a, b) => a.setId.localeCompare(b.setId) || a.number - b.number)
 
 const cardsById = new Map<string, ResolvedCard>(allCards.map((c) => [c.id, c]))
+const bannerCardIds: string[] = ['VS00-009', 'VS00-011', 'VS00-023', 'VS00-012', 'VS00-005']
+export const bannerSet = sets[0]
 
 export function getCard(id: string): ResolvedCard | undefined {
   return cardsById.get(id)
 }
 
 export function bannerCards(): ResolvedCard[] {
-  return [getCard('VS00-001'), getCard('VS00-002'), getCard('VS00-009')].filter((c) => c !== undefined)
+  return bannerCardIds.map((c) => getCard(c)).filter((c) => c !== undefined)
 }
 
 export function getSet(id: string): CardSet | undefined {

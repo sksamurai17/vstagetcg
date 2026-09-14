@@ -30,44 +30,6 @@ export const vtubers: Record<string, VTuber> = {
             'https://genieart.bigcartel.com'
         ]
     },
-    'Hisui_Cai': {
-        name: 'Hisui Cai',
-        handle: 'Hisui_Cai',
-        sets: ['VS00'],
-        socials: [
-            'https://x.com/Hisui_Cai',
-            'https://www.twitch.tv/hisuicai',
-            'https://www.instagram.com/hisuicai',
-            'https://www.youtube.com/channel/UCbOzM6wxnaKmHNIkEkC9PlA',
-            'https://vgen.co/hisuicai',
-            'https://bsky.app/profile/hisuicai.bsky.social',
-            'https://ko-fi.com/hisuicai'
-        ]
-    },
-    'jey_vt': {
-        name: 'Ameiro Jey',
-        handle: 'jey_vt',
-        sets: ['VS00'],
-        socials: [
-            'https://x.com/jey_vt',
-            'https://www.twitch.tv/jey_vt',
-            'https://www.youtube.com/@jey_vt',
-            'https://bsky.app/profile/kidokaproject.bsky.social',
-            'https://www.tiktok.com/@jeyneedsboba',
-            'https://ko-fi.com/kidokaproject'
-        ]
-    },
-    'JoetheJoe9': {
-        name: 'JoetheJoe',
-        handle: 'JoetheJoe9',
-        sets: ['VS00'],
-        socials: [
-            'https://x.com/JoetheJoe9',
-            'https://www.twitch.tv/joethejoe',
-            'https://vgen.co/JoetheJoe',
-            'https://bsky.app/profile/joethejoe.bsky.social'
-        ]
-    },
     'clovoire': {
         name: 'Clovoire',
         handle: 'clovoire',
@@ -83,6 +45,64 @@ export const vtubers: Record<string, VTuber> = {
             'https://clovoire.etsy.com'
         ]
     },
+    'jey_vt': {
+        name: 'Ameiro Jey',
+        handle: 'jey_vt',
+        sets: ['VS00'],
+        socials: [
+            'https://x.com/jey_vt',
+            'https://www.twitch.tv/jey_vt',
+            'https://www.youtube.com/@jey_vt',
+            'https://bsky.app/profile/kidokaproject.bsky.social',
+            'https://www.tiktok.com/@jeyneedsboba',
+            'https://ko-fi.com/kidokaproject'
+        ]
+    },
+    'Hisui_Cai': {
+        name: 'Hisui Cai',
+        handle: 'Hisui_Cai',
+        sets: ['VS00'],
+        socials: [
+            'https://x.com/Hisui_Cai',
+            'https://www.twitch.tv/hisuicai',
+            'https://www.instagram.com/hisuicai',
+            'https://www.youtube.com/channel/UCbOzM6wxnaKmHNIkEkC9PlA',
+            'https://vgen.co/hisuicai',
+            'https://bsky.app/profile/hisuicai.bsky.social',
+            'https://ko-fi.com/hisuicai'
+        ]
+    },
+    'A12FLAMES': {
+        name: 'Deetz',
+        handle: 'A12FLAMES',
+        sets: ['VS00'],
+        socials: [
+            'https://www.youtube.com/@A12FLAMES',
+            'https://x.com/A12FLAMES',
+            'https://bsky.app/profile/a12flames.bsky.social',
+            'https://www.twitch.tv/a12flames',
+            'https://vgen.co/a12flames'
+        ]
+    },
+    'JoetheJoe9': {
+        name: 'JoetheJoe',
+        handle: 'JoetheJoe9',
+        sets: ['VS00'],
+        socials: [
+            'https://x.com/JoetheJoe9',
+            'https://www.twitch.tv/joethejoe',
+            'https://vgen.co/JoetheJoe',
+            'https://bsky.app/profile/joethejoe.bsky.social'
+        ]
+    },
+    'WynnTerra_': {
+        name: 'Wynn Terra',
+        handle: 'WynnTerra_',
+        sets: ['VS00'],
+        socials: [
+
+        ]
+    },
     'nyxiena': {
         name: 'Nyxie',
         handle: 'nyxiena',
@@ -96,59 +116,39 @@ export const vtubers: Record<string, VTuber> = {
             'https://ko-fi.com/nyxiena'
         ]
     },
-    'a12flames': {
-        name: 'Deetz',
-        handle: 'A12FLAMES',
-        sets: ['VS00'],
-        socials: [
-            'https://www.youtube.com/@A12FLAMES',
-            'https://x.com/A12FLAMES',
-            'https://bsky.app/profile/a12flames.bsky.social',
-            'https://www.twitch.tv/a12flames',
-            'https://vgen.co/a12flames'
-        ]
-    },
-    'wynnterra': {
-        name: 'Wynn Terra',
-        handle: 'wynnterra',
-        sets: ['VS00'],
-        socials: [
-
-        ]
-    },
-    'cookieteaa': {
+    'Cookie_Teaa': {
         name: 'Cookie Tea',
-        handle: 'cookieteaa',
+        handle: 'Cookiea_Teaa',
         sets: ['VS00'],
         socials: []
     },
-    'makosameshima': {
+    'MakoSameshima': {
         name: 'Mako Sameshima',
-        handle: 'makosameshima',
+        handle: 'MakoSameshima',
         sets: ['VS00'],
         socials: []
     },
-    'fangguu': {
+    'FangGuu': {
         name: 'Fang Guu',
-        handle: 'fangguu',
+        handle: 'FangGuu',
         sets: ['VS00'],
         socials: []
     },
-    'imorimei': {
+    'gekkomancer': {
         name: 'Mei Imori',
-        handle: 'imorimei',
+        handle: 'gekkomancer',
         sets: ['VS00'],
         socials: []
     },
-    'noromin': {
+    'noromin_': {
         name: 'Noromin',
-        handle: 'noromin',
+        handle: 'noromin_',
         sets: ['VS00'],
         socials: []
     },
-    'azukitou': {
+    'AzukitouVT': {
         name: 'Azukitou',
-        handle: 'azukitou',
+        handle: 'AzukutouVT',
         sets: ['VS00'],
         socials: []
     },
@@ -159,7 +159,7 @@ export const vtubers: Record<string, VTuber> = {
         socials: []
     },
     'AkioBlaze': {
-        name: 'Akioblaze',
+        name: 'AkioBlaze',
         handle: 'AkioBlaze',
         sets: ['VS00'],
         socials: [
@@ -167,15 +167,15 @@ export const vtubers: Record<string, VTuber> = {
             'https://x.com/AkioBlaze'
         ]
     },
-    'yoruhanamai': {
+    'YoruhanaMai': {
         name: 'Yoruhana Mai',
-        handle: 'yoruhanamai',
+        handle: 'YoruhanaMai',
         sets: ['VS00'],
         socials: []
     },
-    'rira': {
+    'chiyongrira': {
         name: 'Chiyong Rira',
-        handle: 'rira',
+        handle: 'chiyongrira',
         sets: ['VS00'],
         socials: []
     },
@@ -185,15 +185,15 @@ export const vtubers: Record<string, VTuber> = {
         sets: ['VS00'],
         socials: []
     },
-    'sayurikitsune': {
+    'SayuriKitsun': {
         name: 'Sayuri Kitsune',
         handle: 'sayurikitsune',
         sets: ['VS00'],
         socials: []
     },
-    'kazzihino': {
+    'KazziHino': {
         name: 'Kazzi Hino',
-        handle: 'kazzihino',
+        handle: 'KazziHino',
         sets: ['VS00'],
         socials: []
     },
@@ -209,39 +209,39 @@ export const vtubers: Record<string, VTuber> = {
         sets: ['VS00'],
         socials: []
     },
-    'sakoneko': {
+    'sakoneko_': {
         name: 'Sakoneko',
         handle: 'sakoneko_',
         sets: ['VS00'],
         socials: []
     },
-    'teafiee': {
+    'TeafieeCha': {
         name: 'Teafiee',
         handle: 'TeafieeCha',
         sets: ['VS00'],
         socials: []
     },
-    'wiiiyaa': {
+    'wiiiyaa_': {
         name: 'Wiiiyaa',
-        handle: 'wiiiyaa',
+        handle: 'wiiiyaa_',
         sets: ['VS00'],
         socials: []
     },
-    'omelettesss': {
+    'omelettessss': {
         name: 'Omelette',
         handle: 'omelettessss',
         sets: ['VS00'],
         socials: []
     },
-    'tirumisa': {
+    'misabunbun': {
         name: 'Tirumisa',
-        handle: 'tirumisa',
+        handle: 'misabunbun',
         sets: ['VS00'],
         socials: []
     },
-    'strawberry_moonua': {
+    'StrawberryMoonua': {
         name: 'Strawberry Moonua',
-        handle: 'strawberry_moonua',
+        handle: 'StrawberryMoonua',
         sets: ['VS00'],
         socials: []
     },
@@ -251,4 +251,34 @@ export const vtubers: Record<string, VTuber> = {
         sets: ['VS00'],
         socials: []
     },
+    'thailuart': {
+        name: 'Thai Lu',
+        handle: 'thailuart',
+        sets: ['VS00'],
+        socials: []
+    },
+    'yuniese': {
+        name: 'Yuniese',
+        handle: 'yuniese',
+        sets: ['VS00'],
+        socials: []
+    },
+    'whalekun777': {
+        name: 'Whalekun',
+        handle: 'whalekun777',
+        sets: ['VS00'],
+        socials: []
+    },
+    'mochiii_000_': {
+        name: 'Mochiii',
+        handle: 'mochiii_000_',
+        sets: ['VS00'],
+        socials: []
+    },
+    'Ulysses_Elrin': {
+        name: 'Ulysses Elrin',
+        handle: 'Ulysses_Elrin',
+        sets: ['VS00'],
+        socials: []
+    }
 }
