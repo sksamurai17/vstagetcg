@@ -100,7 +100,7 @@ export const vtubers: Record<string, VTuber> = {
         handle: 'WynnTerra_',
         sets: ['VS00'],
         socials: [
-
+            'https://x.com/WynnTerra_'
         ]
     },
     'nyxiena': {

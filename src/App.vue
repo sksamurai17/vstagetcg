@@ -50,7 +50,7 @@ function getLogoImageURL() {
 
   <footer class="border-top mt-5 py-4">
     <div class="container text-body-secondary small">
-      VStage card gallery — fan reference. Card data is placeholder.
+      VStage card gallery & rulebook reference.
     </div>
   </footer>
 </template>
