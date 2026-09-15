@@ -118,9 +118,11 @@ export const vtubers: Record<string, VTuber> = {
     },
     'Cookie_Teaa': {
         name: 'Cookie Tea',
-        handle: 'Cookiea_Teaa',
+        handle: 'Cookie_Teaa',
         sets: ['VS00'],
-        socials: []
+        socials: [
+            'https://x.com/Cookie_Teaa'
+        ]
     },
     'MakoSameshima': {
         name: 'Mako Sameshima',
