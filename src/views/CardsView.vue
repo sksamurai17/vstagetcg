@@ -2,8 +2,8 @@
 import { computed, ref } from 'vue'
 import { RouterView, useRoute } from 'vue-router'
 import { useHead } from '@unhead/vue'
-import { allCards, sets } from '@/data'
-import { RARITIES, RARITY_LABELS, type RarityType } from '@/types/card'
+import { allCards, sets, defaultSet } from '@/data'
+import { RARITIES, RARITY_LABELS, type RarityType, PassiveType, passiveDisplayName } from '@/types/card'
 import CardTile from '@/components/CardTile.vue'
 
 useHead({
@@ -14,13 +14,17 @@ useHead({
 const route = useRoute()
 const query = ref('')
 const rarity = ref<RarityType | 'all'>('all')
-const resolvedSet = sets.some(s => s.id === route.query.set) ? (route.query.set || 'VS00') : 'VS00'
+const passive = ref<PassiveType | 'all' | 'none'>('all')
+const resolvedSet = sets.some(s => s.id === route.query.set) ? (route.query.set || defaultSet) : defaultSet
 const set = ref(resolvedSet)
 
 const visible = computed(() => {
   const q = query.value.trim().toLowerCase()
   return allCards.filter((card) => {
     if (rarity.value !== 'all' && card.rarity !== rarity.value) return false
+    if (passive.value === 'none' && card.skills[0] && card.skills[0].type === 'passive') return false
+    if (passive.value !== 'all' && passive.value !== 'none' && card.skills[0] && card.skills[0].type !== 'passive') return false
+    if (passive.value !== 'all' && passive.value !== 'none' && card.skills[0] && card.skills[0].type === 'passive' && card.skills[0].name !== passive.value) return false
     if (card.setId !== set.value) return false
     if (!q) return true
     return (
@@ -38,7 +42,8 @@ const visible = computed(() => {
     <h1 class="h2 mb-3">Card Gallery</h1>
 
     <div class="row g-2 mb-4">
-      <div class="col-12 col-sm-6">
+      <div class="col-12 col-sm-4">
+      <p>Query</p>
         <input
           v-model="query"
           type="search"
@@ -47,13 +52,23 @@ const visible = computed(() => {
           aria-label="Search cards"
         />
       </div>
-      <div class="col-12 col-sm-3">
+      <div class="col-12 col-sm-2">
+        <p>Rarity</p> 
         <select v-model="rarity" class="form-select" aria-label="Filter by rarity">
           <option value="all">All rarities</option>
           <option v-for="r in RARITIES" :key="r" :value="r">{{ RARITY_LABELS[r] }}</option>
         </select>
       </div>
       <div class="col-12 col-sm-3">
+        <p>Passive Skill</p>
+        <select v-model="passive" class="form-select" aria-label="Filter by passive skill">
+          <option value="all">All passives (incl. no passives)</option>
+          <option value="none">No passive</option>
+          <option v-for="p in Object.values(PassiveType)" :key="passiveDisplayName(p)" :value="p">{{passiveDisplayName(p)}}</option>
+        </select>
+      </div>
+      <div class="col-12 col-sm-3">
+        <p>Set Name</p>
         <select v-model="set" class="form-select" aria-label="Filter by set">
           <option v-for="s in sets" :key="s.name" :value="s.id">{{s.name}}</option>
         </select>

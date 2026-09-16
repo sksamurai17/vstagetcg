@@ -10,7 +10,7 @@ import sampleArt from '@/assets/cards/sample-art.jpg'
  */
 export const cards: Card[] = [
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 1,
     image: 'SketchSamurai',
     artist: 'SketchSamurai',
@@ -32,7 +32,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 2,
     image: 'Genie',
     artist: 'SketchSamurai',
@@ -55,7 +55,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 3,
     image: 'Clovoire',
     handle: 'clovoire',
@@ -78,7 +78,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 4,
     image: 'Jey',
     handle: 'jey_vt',
@@ -97,7 +97,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 5,
     image: 'HisuiCai',
     handle: 'Hisui_Cai',
@@ -116,7 +116,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 6,
     image: 'Deetz',
     handle: 'A12FLAMES',
@@ -132,14 +132,14 @@ export const cards: Card[] = [
       },
       {
         type: 'active',
-        name: 'Blazing Fist',
+        name: 'Burning Fist',
         cost: 3,
         description: 'Deal [1d6+2] DMG to an enemy target.',
       },
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 7,
     image: 'JoetheJoe',
     handle: 'JoetheJoe9',
@@ -161,7 +161,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 8,
     image: 'WynnTerra',
     handle: 'WynnTerra_',
@@ -183,7 +183,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 9,
     image: 'Nyxie',
     handle: 'nyxiena',
@@ -206,7 +206,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 10,
     image: 'CookieTea',
     handle: 'Cookie_Teaa',
@@ -228,7 +228,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 11,
     image: 'MakoSameshima',
     handle: 'MakoSameshima',
@@ -251,7 +251,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 12,
     image: 'FangGuu',
     handle: 'FangGuu',
@@ -275,12 +275,12 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 13,
-    image: 'ImoriMei',
+    image: 'MeiImori',
     handle: 'gekkomancer',
     artist: 'SketchSamurai',
-    name: 'Imori Mei',
+    name: 'Mei Imori',
     rarity: 'common',
     maxHp: 11,
     skills: [
@@ -293,7 +293,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 14,
     image: 'Noromin',
     handle: 'noromin_',
@@ -316,7 +316,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 15,
     image: 'Azukitou',
     handle: 'AzukitouVT',
@@ -338,7 +338,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 16,
     image: 'HoshinoSae',
     handle: 'sae1627_',
@@ -360,7 +360,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 17,
     image: 'AkioBlaze',
     handle: 'AkioBlaze',
@@ -382,7 +382,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 18,
     image: 'YoruhanaMai',
     handle: 'YoruhanaMai',
@@ -405,7 +405,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 19,
     image: 'ChiyongRira',
     handle: 'chiyongrira',
@@ -427,12 +427,12 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 20,
-    image: 'Spelly',
+    image: 'SpellCraft',
     handle: 'spellydoesart',
     artist: 'SketchSamurai',
-    name: 'Spelly',
+    name: 'Spell Craft',
     rarity: 'uncommon',
     maxHp: 10,
     skills: [
@@ -449,7 +449,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 21,
     image: 'SayuriKitsune',
     handle: 'SayuriKitsun',
@@ -471,7 +471,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 22,
     image: 'KazziHino',
     handle: 'KazziHino',
@@ -493,7 +493,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 23,
     image: 'Hyuni',
     handle: 'hyunicat',
@@ -517,7 +517,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 24,
     image: 'Kaeguri',
     handle: 'myfroggythighs',
@@ -525,19 +525,21 @@ export const cards: Card[] = [
     name: 'Kaeguri',
     rarity: 'common',
     maxHp: 10,
-    tokenIds: ['tok-all-rapid-all-center'],
     skills: [
+      {
+        type: 'passive',
+        name: PassiveType.Collab
+      },
       {
         type: 'active',
         name: 'Can\t End On a Loss',
         cost: 4,
-        description: 'Deal [1d6] DMG to an enemy target. If any allies were knocked out on your opponent\'s last turn, deal 1 additional DMG to this target.\n' +
-        'Boost (+2): Deploy «All Rapid All Center».',
+        description: 'Deal [1d6] DMG to an enemy target. If any allies were knocked out on your opponent\'s last turn, deal 1 additional DMG to this target.'
       },
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 25,
     image: 'Sakoneko',
     handle: 'sakoneko_',
@@ -559,7 +561,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 26,
     image: 'Teafiee',
     handle: 'TeafieeCha',
@@ -583,7 +585,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 27,
     image: 'Wiiiyaa',
     handle: 'wiiiyaa_',
@@ -606,7 +608,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 28,
     image: 'Omelette',
     handle: 'omelettessss',
@@ -628,7 +630,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 29,
     image: 'Tirumisa',
     handle: 'misabunbun',
@@ -651,7 +653,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 30,
     image: 'StrawberryMoonua',
     handle: 'StrawberryMoonua',
@@ -674,7 +676,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 31,
     image: 'Meekmac',
     handle: 'meekmac_art',
@@ -696,7 +698,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 32,
     image: 'ThaiLu',
     handle: 'thailuart',
@@ -718,7 +720,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 33,
     image: 'Yuniese',
     handle: 'yuniese',
@@ -740,7 +742,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 34,
     image: 'Whalekun',
     handle: 'whalekun777',
@@ -764,7 +766,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 35,
     image: 'Mochiii',
     handle: 'mochiii_000_',
@@ -786,7 +788,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 36,
     image: 'UlyssesElrin',
     handle: 'Ulysses_Elrin',
@@ -810,57 +812,57 @@ export const cards: Card[] = [
   // Overnumbered secret prints.
   // No name, HP or skills here, those get resolved at read time
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 37,
     image: 'GenieFullArt',
     artist: 'SketchSamurai',
     rarity: 'rare',
-    baseCardId: 'VS00-002',
+    baseCardId: 'AL00-002',
     handle: 'genieart_'
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 38,
     image: 'JeyFullArt',
     artist: 'SketchSamurai',
     rarity: 'rare',
-    baseCardId: 'VS00-004',
+    baseCardId: 'AL00-004',
     handle: 'jey_vt'
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 39,
     image: 'FangFullArt',
     artist: 'SketchSamurai',
     rarity: 'rare',
-    baseCardId: 'VS00-012',
+    baseCardId: 'AL00-012',
     handle: 'FangGuu'
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 40,
     image: 'NyxieFullArt',
     artist: 'SketchSamurai',
     rarity: 'ultra-rare',
-    baseCardId: 'VS00-009',
+    baseCardId: 'AL00-009',
     handle: 'nyxiena'
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 41,
     image: 'MakoSameshimaFullArt',
     artist: 'SketchSamurai',
     rarity: 'ultra-rare',
-    baseCardId: 'VS00-011',
+    baseCardId: 'AL00-011',
     handle: 'MakoSameshima'
   },
   {
-    setId: 'VS00',
+    setId: 'AL00',
     number: 42,
     image: 'HyuniFullArt',
     artist: 'SketchSamurai',
     rarity: 'ultra-rare',
-    baseCardId: 'VS00-023',
+    baseCardId: 'AL00-023',
     handle: 'hyunicat'
   }
 ]

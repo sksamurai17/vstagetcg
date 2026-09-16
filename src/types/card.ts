@@ -125,7 +125,7 @@ export function isReprint(card: Card): card is Reprint {
   return 'baseCardId' in card
 }
 
-/** Stable URL id, zero-padded so routes sort predictably: VS00-041. */
+/** Stable URL id, zero-padded so routes sort predictably: AL00-041. */
 export function cardId(setId: string, number: number): string {
   return `${setId}-${String(number).padStart(3, '0')}`
 }
@@ -153,6 +153,14 @@ export function skillName(skill: Skill): string {
     return skill.name.replace('XXX', String(skill.x_count ?? 1))
   }
   return skill.name
+}
+
+export function passiveDisplayName(passive: PassiveType): string {
+  switch (passive) {
+    case PassiveType.Collab: return 'Collab'
+    case PassiveType.CozyVibes: return 'Cozy Vibes'
+    default: return passive
+  }
 }
 
 export function passiveSkillColor(passive: string): string {

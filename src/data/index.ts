@@ -7,11 +7,11 @@ import {
   type Token,
 } from '@/types/card'
 import { cards } from './cards'
-import { sets } from './sets'
+import { sets, defaultSet } from './sets'
 import { tokens } from './tokens'
 import { vtubers } from './vtubers'
 
-export { cards, sets, tokens, vtubers }
+export { cards, sets, defaultSet, tokens, vtubers }
 
 const setsById = new Map<string, CardSet>(sets.map((s) => [s.id, s]))
 const tokensById = new Map<string, Token>(tokens.map((t) => [t.id, t]))
@@ -58,7 +58,7 @@ export const allCards: ResolvedCard[] = cards
   .sort((a, b) => a.setId.localeCompare(b.setId) || a.number - b.number)
 
 const cardsById = new Map<string, ResolvedCard>(allCards.map((c) => [c.id, c]))
-const bannerCardIds: string[] = ['VS00-009', 'VS00-011', 'VS00-023', 'VS00-012', 'VS00-005']
+const bannerCardIds: string[] = ['AL00-009', 'AL00-011', 'AL00-023', 'AL00-012', 'AL00-005']
 export const bannerSet = sets[0]
 
 export function getCard(id: string): ResolvedCard | undefined {

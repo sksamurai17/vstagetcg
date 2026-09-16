@@ -23,7 +23,7 @@ const tokens = computed(() => getTokensFor(props.card))
       <div class="vs-detail-art" :data-rarity="card.rarity">
         <CardArt :card="card" />
       </div>
-      <p class="text-body-secondary small text-center mt-2 mb-0">illust. {{ card.artist }}</p>
+      <p class="text-body-secondary small mt-2 mb-2 text-center">Illustrator: {{ card.artist }}</p>
     </div>
 
     <div class="col-12 col-sm-7">
@@ -33,7 +33,7 @@ const tokens = computed(() => getTokensFor(props.card))
       </div>
 
       <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
-        <span class="text-body-secondary small font-monospace">{{ card.setId }} {{ set?.name ?? card.setId }} · {{ number }}</span>
+        <span class="text-body-secondary small font-monospace">{{ set?.name ?? card.setId }} ({{ card.setId }}) · {{ number }}</span>
       </div>
 
       <div v-if="card.isReprint" class="badge text-bg-primary mb-2">
@@ -43,17 +43,19 @@ const tokens = computed(() => getTokensFor(props.card))
       <h5 class="text-body-secondary">
         <span class="text-success fw-semibold">{{ card.maxHp }} HP</span>
       </h5>
+      <hr>
 
-      <h2 class="h5 text-body-secondary">Skills</h2>
-      <SkillList :skills="card.skills" class="mb-4" />
+      <h2 class="h6 text-body-secondary">SKILLS</h2>
+      <SkillList :skills="card.skills" class="mb-2" />
+      <hr>
 
       <template v-if="tokens.length">
-        <h2 class="h5 text-body-secondary">Tokens Produced</h2>
+        <h2 class="h6 text-body-secondary">TOKENS PRODUCED</h2>
         <TokenList :tokens="tokens" class="mb-3"/>
       </template>
 
       <div v-if="card.handle && vtubers[card.handle] && vtubers[card.handle]?.socials">
-        <h2 class="h5 text-body-secondary">Socials</h2></br>
+        <h2 class="h6 text-body-secondary">SOCIALS</h2></br>
         <div class="d-flex align-items-center gap-2 mb-4">
           <SocialsBar :socials="vtubers[card.handle]?.socials ?? []"/>
         </div>

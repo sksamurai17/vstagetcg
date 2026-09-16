@@ -29,8 +29,6 @@ function signature(setId: string) {
 
       <ul class="list-inline text-body-secondary small">
         <li class="list-inline-item">{{ set.totalCards }} cards in the set</li>
-        <li class="list-inline-item">·</li>
-        <li class="list-inline-item">{{ cardsInSet(set.id).length }} catalogued here</li>
       </ul>
 
       <h3 class="h6 text-uppercase text-body-secondary mt-4">Signature cards</h3>

@@ -1,10 +1,10 @@
 # VStage Card Gallery
 
-A card gallery for **VStage**, a card game about vtubers. Vue 3 + TypeScript + Vite,
-statically prerendered with `vite-ssg`, styled with Bootstrap 5.
+A card gallery for **VStage**, a fast-paced strategy VTuber TCG. Built with Vue 3 + TypeScript + Vite,
+statically prerendered with `vite-ssg`, and styled with Bootstrap 5.
 
-This is a reference site, not a playable game — card effects are descriptive text and no
-game state is ever simulated.
+This is only reference site, not a playable game. Card effects are descriptive text and no
+game state is ever simulated, but a deck-building feature is something I want to add in the future.
 
 ## Getting started
 
@@ -23,11 +23,11 @@ npm run dev        # http://localhost:5180
 
 ## Adding cards
 
-Card data is hand-authored TypeScript in `src/data/`. The compiler is the schema check —
+Card data is hand-authored TypeScript in `src/data/`. The compiler is the schema check, and
 a malformed card fails `npm run type-check` rather than breaking at runtime.
 
 - `src/data/cards.ts` — the cards
-- `src/data/tokens.ts` — tokens characters can summon
+- `src/data/tokens.ts` — tokens characters can summon/deploy (summons and stage effects)
 - `src/data/sets.ts` — set names and declared set sizes
 
 Adding a card needs **no routing or build config change**: `src/router/index.ts` generates
@@ -37,21 +37,21 @@ one static route per card, and `vite-ssg` prerenders whatever it finds.
 
 ```ts
 // A full card definition.
-{ setId: 'VS00', number: 1, image: sampleArt, artist: 'SketchSamurai',
+{ setId: 'AL00', number: 1, image: sampleArt, artist: 'SketchSamurai',
   name: 'Vtuber A', rarity: 'uncommon', maxHp: 10, skills: [...] }
 
 // An overnumbered secret print (41/40) of an existing card.
-{ setId: 'VS00', number: 41, image: sampleArt, artist: 'SketchSamurai',
-  rarity: 'ultra-rare', baseCardId: 'VS00-002' }
+{ setId: 'AL00', number: 41, image: sampleArt, artist: 'SketchSamurai',
+  rarity: 'ultra-rare', baseCardId: 'AL00-002' }
 ```
 
-A reprint has no `name`, `maxHp` or `skills` field *at all* — those resolve from its base
+An overnumbered illustration rare has no `name`, `maxHp` or `skills` field *at all* - those resolve from its base
 card at read time, so skill text can never drift between two printings of the same card.
 Only `number`, `rarity` and `image` belong to the printing. `resolveCard()` in
 `src/data/index.ts` merges the two, and every component consumes the merged result.
 
 Overnumbered cards intentionally exceed a set's declared `totalCards`, which is why
-`41/40` displays correctly and why the dev-mode integrity check warns on *duplicate*
+`37/36` displays correctly and why the dev-mode integrity check warns on *duplicate*
 numbers rather than on exceeding the total.
 
 ### Rarity
@@ -61,32 +61,26 @@ numbers rather than on exceeding the total.
 maps each to its display form (`'ultra-rare'` renders as `Ultra Rare`). The hyphenated
 value keeps it usable in CSS attribute selectors and filter values.
 
-The rarity marking printed in the card's bottom-left corner is not modelled — the site
+The rarity marking printed in the card's bottom-left corner is not modelled; the site
 shows the word instead.
 
 ### Card art and credits
 
 `image` and `artist` are both **required** on every card, including reprints. A reprint's
-whole point is that its art differs from the base card's, so neither is inherited — it
+whole point is that its art differs from the base card's, so neither is inherited; it
 carries its own art and its own illustrator credit.
 
 Art is imported, not referenced by path string, so Vite fingerprints it for cache-busting
 (`/assets/sample-art-CgJC2NGf.jpg`) and a missing file fails the build instead of turning
 into a broken image at runtime.
 
-Right now every card points at one shared placeholder:
-
-```ts
-import sampleArt from '@/assets/cards/sample-art.jpg'
-```
-
 To give a card real art, drop the file into `src/assets/cards/`, add an import beside that
-one, and point that card's `image` at it. Cards can be migrated one at a time.
+one, and point that card's `image` string at its filename. Cards can be migrated one at a time.
 
 ## How prerendering works
 
 `npm run build` runs `vite-ssg build`, which renders each route to a real HTML file
-(`dist/cards/VS00-001/index.html`) containing the card's actual text. That is what makes
+(`dist/cards/AL00-001/index.html`) containing the card's actual text. That is what makes
 shared card links produce previews in Discord and get indexed by search engines.
 
 Card detail is a **child route of `/cards`**, which means one component serves both
